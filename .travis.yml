@@ -2,10 +2,12 @@ language: python
 
 install:
   - pip install -r requirements.txt
+  - pip install pytest-cov
   - pip install coveralls
 
 script: 
-  - pytest --cov=softtesting_assignment3/
+  - python -m pytest -v
+  - coverage run --source=mypkg -m pytest tests/
   
 affter_success:
   - coveralls
