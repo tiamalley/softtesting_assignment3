@@ -1,0 +1,40 @@
+<!doctype html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>BMI Calculator</title>
+	
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<h1>BMI Calculator</h1>
+
+<body>
+    <div class="main">
+        <form class="pure-form" method="POST" action="/">
+            Height(ft):<br>
+            <input type="text" id="heightFt" name="heightFt" required><br><br>
+            Height(in):<br>
+            <input type="text" id ="heightIn"name="heightIn" required><br><br>
+            Weight(lbs):<br>
+            <input type="text" id="weight" name="weight" required><br><br>
+            <button class="button button1">Calculate</button>
+        </form>
+    </div>
+    <br>
+    <div class="main">
+        {% if bmi %}
+            <p>
+                <h1>Results</h1>
+                {% print("BMI: {}".format(bmi)) %}<br>
+                {% print("Category: {}".format(category)) %}
+            </p>    
+        {% endif %}
+    </div>
+</body>
+</html>
