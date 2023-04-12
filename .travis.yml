@@ -7,7 +7,7 @@ install:
 
 script: 
   - python -m pytest -v
-  - coverage run --source=mypkg -m pytest tests/
+  - coverage run --source=softtesting_assignment3 -m pytest tests/
   
 affter_success:
   - coveralls
