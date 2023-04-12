@@ -1,4 +1,4 @@
-from app import calc_bmi, categoryBMI
+from app.py import calc_bmi, categoryBMI
 from contextlib import redirect_stdout
 from io import StringIO
 
