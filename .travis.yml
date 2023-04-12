@@ -2,6 +2,8 @@ language: python
 
 install:
   - pip install -r requirements.txt
+  - pip install coveralls
 
 script: 
   - python -m pytest -v
+  - coverage run --source=mypkg -m pytest tests/
